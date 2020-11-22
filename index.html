@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
- <title>formulario peso ideal hermano</title>
- <script type="text/javascript">
-  //definimos la funcion
-  function calculaIMC()
-  {
-  //declaramos las variables
- var peso, altura, imc, leyenda;
- //hacemos la llamada a los datos introducidos
-  peso=document.getElementById("peso").value;
-  altura=document.getElementById("altura").value/100;
- //calculamos el imc
-  imc=peso/(altura*altura);
- //enviamos el resultado a la caja correspondiente y lo reducimos a 2 decimales
-  document.getElementById("imc").value=imc.toFixed(2);
- //mediante if comparamos el resultado para determinar si es correcto el peso
- if(imc<=20.5)
-  {
-  //determinamos el defecto en peso y definimos el comentario
-  leyenda="Estas delgado. Debes engordar " + (altura*altura*20.5-peso).toFixed(1) + " kilos";
-  }
-  else if(imc>=25.5)
- {
- //determinamos el exceso en peso y definimos el comentario
- leyenda="Tienes sobrepeso. Debes adelgazar "+(peso-altura*altura*25.5).toFixed(1) +" kilos";
- }
- else
-  {
-  leyenda="Estas en tu peso ideal";
-  }
- //enviamos el comentario a la caja correspondiente
- document.getElementById("leyenda").value=leyenda;
-  }
- </script>
-  </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejemplo de PWA</title>
+    <script src="js/registraServiceWorker.js"></script>
+
+    <!-- Ícono para la página web. Debe ponerse en la raíz de la página. -->
+    <link rel="icon" sizes="32x32" href="favicon.ico">
+
+    <!-- Color de la barra de navegación de Chrome en dispositivos móviles. -->
+    <meta name="theme-color" content="#81d4f4">
+
+    <!-- Configuración de la PWA: Chrome y Edge. -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Configuración para Web Clip en Safari. -->
+    <meta name="apple-mobile-web-app-title" content="dmppwa">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="img/icono2048.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icono256.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/icono1024.png">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="img/icono2048.png">
+
+    <script type="module" src="cmp/mi-footer.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
   <body>
- <form name="f1" id="f1" action="">
- <!--enmarcamos el formulario-->
- <fieldset>
- <!--le damos un nombre al marco-->
- <legend>CALCULO DEL PESO IDEAL IMC (Indice de Masa Corporal)</legend>
-  <p>Peso en kg.:
-  <!--definimos una caja donde introducir el dato del peso-->
-  <input type="text" name="peso" id="peso" size="3" maxlength="4">
-  </p>
-  <p>Altura en cm.:
-  <!--definimos una caja donde introducir el dato de la altura-->
-  <input type="text" name="altura" id="altura" size="3" maxlength="3">
-  <!--definimos un boton que hara la llamada a la funcion para calcular el imc-->
-  <input type="button" value="Calcular IMC" onClick="calculaIMC()">
-  </p>
-  <p> IMC:
-  <!--definimos una caja donde la funcion devolvera el valor de imc calculado-->
-  <input type="text" name="imc" id="imc" size="10" maxlength="15">
-  Leyenda:
-  <!--definimos una caja donde la funcion escribira el comentario, definido en leyenda-->
-  <input type="text" name="leyenda" id="leyenda" size="42">
-  </p>
- </fieldset>
- </form>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>formulario peso ideal</title>
+<script type="text/javascript">
+ //definimos la funcion
+ function calculaIMC()
+ {
+ //declaramos las variables
+var peso, altura, imc, leyenda;
+//hacemos la llamada a los datos introducidos
+ peso=document.getElementById("peso").value;
+ altura=document.getElementById("altura").value/100;
+//calculamos el imc
+ imc=peso/(altura*altura);
+//enviamos el resultado a la caja correspondiente y lo reducimos a 2 decimales
+ document.getElementById("imc").value=imc.toFixed(2);
+//mediante if comparamos el resultado para determinar si es correcto el peso
+if(imc<=20.5)
+ {
+ //determinamos el defecto en peso y definimos el comentario
+ leyenda="Estas delgado. Debes engordar " + (altura*altura*20.5-peso).toFixed(1) + " kilos";
+ }
+ else if(imc>=25.5)
+{
+//determinamos el exceso en peso y definimos el comentario
+leyenda="Tienes sobrepeso. Debes adelgazar "+(peso-altura*altura*25.5).toFixed(1) +" kilos";
+}
+else
+ {
+ leyenda="Estas en tu peso ideal";
+ }
+//enviamos el comentario a la caja correspondiente
+document.getElementById("leyenda").value=leyenda;
+ }
+</script>
+ </head>
+ <body>
+<form name="f1" id="f1" action="">
+<!--enmarcamos el formulario-->
+<fieldset>
+<!--le damos un nombre al marco-->
+<legend>CALCULO DEL PESO IDEAL IMC (Indice de Masa Corporal)</legend>
+ <p>Peso en kg.:
+ <!--definimos una caja donde introducir el dato del peso-->
+ <input type="text" name="peso" id="peso" size="3" maxlength="4">
+ </p>
+ <p>Altura en cm.:
+ <!--definimos una caja donde introducir el dato de la altura-->
+ <input type="text" name="altura" id="altura" size="3" maxlength="3">
+ <!--definimos un boton que hara la llamada a la funcion para calcular el imc-->
+ <input type="button" value="Calcular IMC" onClick="calculaIMC()">
+ </p>
+ <p> IMC:
+ <!--definimos una caja donde la funcion devolvera el valor de imc calculado-->
+ <input type="text" name="imc" id="imc" size="10" maxlength="15">
+ Leyenda:
+ <!--definimos una caja donde la funcion escribira el comentario, definido en leyenda-->
+ <input type="text" name="leyenda" id="leyenda" size="42">
+ </p>
+</fieldset>
+</form>
+        <mi-footer></mi-footer>
+      </p>
+    </footer>
   </body>
- </html>
+</html>
